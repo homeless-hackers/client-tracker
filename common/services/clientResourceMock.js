@@ -13,22 +13,30 @@
 					for (var j = 0; j < clients.length; j++) {
 						var client = clients[j];
 						if (person._id == client._id) {
-							var tempIncidents = person.events.splice(0);
-							for (var k = 0; k < person.events.length; k++) {
-								var incident = person.events[k];
-								for (var l = 0; l < client.events.length; l++) {
-									var event = client.events[l];
-									if (incident._id == event._id) {
-										tempIncidents.splice(k,1);
+							if (client.events) {
+								var tempIncidents = client.events.slice(0);
+								for (var k = 0; k < client.events.length; k++) {
+									var incident = client.events[k];
+									for (var l = 0; l < person.events.length; l++) {
+										var event = person.events[l];
+										if (incident._id == event._id) {
+
+											var p = tempIncidents.indexOf(incident);
+											tempIncidents.splice(p, 1);
+										}
 									}
 								}
+								for (var m = 0; m < tempIncidents.length; m++) {
+									var incident = tempIncidents[m];
+									client.events.push(incident);
+									toastr.info("An new incident has been added for " + client.FNAME + " " + client.LNAME);
+								}
 							}
-							for (var m = 0; m < tempIncidents.length; m++) {
-								var incident = tempIncidents[m];
-								client.events.push(incident);
-								toastr.info("An new incident has been added for " + client.FNAME + " " + client.LNAME);
+							else {
+								client.events = [];
 							}
-							temppeople.splice(i, 1);
+							var q = temppeople.indexOf(client);
+							temppeople.splice(q, 1);
 						}
 					}
 				}
