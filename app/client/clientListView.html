@@ -10,33 +10,22 @@
 
 			<thead>
 				<tr>
-					<td>
-						<button type="button"
-								class="btn btn-primary"
-								ng-click="vm.toggleImage()">
-							{{vm.showImage ? "Hide" : "Show"}} Image
-						</button>
-					</td>
-					<td>Name</td>
-					<td>Birth Date</td>
-					<td>Gender</td>
+					
+					<th>Name</th>
+					<th>Birth Date</th>
+					<th>Gender</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="client in vm.clients">
+					
 					<td>
-						<img ng-if="vm.showImage"
-							 ng-src="{{client.imageUrl}}"
-							 style="width:50px;margin:2px"
-							 title="{{client.firstName}}">
-					</td>
-					<td>
-						<a ui-sref="clientEdit({clientId: client.Id})">
-							{{ client.firstName}} {{client.middleName}} {{client.lastName}}
+						<a ui-sref="clientEdit.info({clientId: client._id})">
+							{{ client.Identity.FNAME}} {{client.Identity.MNAME}} {{client.Identity.LNAME}}
 						</a>
 					</td>
-					<td>{{ client.birthDate }}</td>
-					<td>{{ client.gender }}</td>
+					<td>{{ client.Identity.DOB }}</td>
+					<td>{{ client.Identity.SEX }}</td>
 				</tr>
 			</tbody>
 		</table>

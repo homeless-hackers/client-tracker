@@ -49,9 +49,9 @@
 					url: "/info",
 					templateUrl: "app/client/clientEditInfoView.html"
 				})
-				.state("clientEdit.stuff", {
-					url: "/price",
-					templateUrl: "app/client/clientEditStuffView.html"
+				.state("clientEdit.incidents", {
+					url: "/incidents",
+					templateUrl: "app/client/clientEditIncidentsView.html"
 				})
         }]
 	);

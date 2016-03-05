@@ -1,0 +1,36 @@
+﻿<form class="form-horizontal" name="clientForm" novalidate>
+	<fieldset>
+		<legend>Incident</legend>
+		<div ng-repeat="event in vm.client.events">
+			<div class="form-group">
+				<label class="col-md-2 control-label"
+					   for="inputCaseId">Case ID</label>
+				<div class="col-md-4">
+					{{event.CASE_ID}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-2 control-label"
+					   for="inputCaseId">Date/Time</label>
+				<div class="col-md-4">
+					{{event.DATE }}/{{event.TIME}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-2 control-label"
+					   for="inputCaseId">Hearing Type</label>
+				<div class="col-md-4">
+					{{event.HEARING_TYPE}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-2 control-label"
+					   for="inputCaseId">Title</label>
+				<div class="col-md-4">
+					{{event.TITLE}}
+				</div>
+			</div>
+
+		</div>
+	</fieldset>
+</form>

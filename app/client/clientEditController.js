@@ -11,12 +11,17 @@
 
 	function ClientEditController(client, $state, clientService) {
 		var vm = this;
-
+		vm.client = client;
+		vm.opened = false;
 		if (vm.client && vm.client.Id) {
 			vm.title = "Edit: " + vm.client.firstName;
 		}
 		else {
 			vm.title = "New Client";
+		}
+
+		vm.submit = function () {
+			toastr.info("Test");
 		}
 	}
 }());
