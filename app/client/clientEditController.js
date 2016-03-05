@@ -13,8 +13,8 @@
 		var vm = this;
 		vm.client = client;
 		vm.opened = false;
-		if (vm.client && vm.client.Id) {
-			vm.title = "Edit: " + vm.client.firstName;
+		if (vm.client && vm.client.Identity) {
+			vm.title = "Edit: " + vm.client.Identity.FNAME + " " + vm.client.Identity.LNAME;
 		}
 		else {
 			vm.title = "New Client";
