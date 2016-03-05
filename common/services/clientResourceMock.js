@@ -5,12 +5,41 @@
 	var getClients = function () {
 		$.ajax({
 			url: "https://hh-incident-monitoring-service.herokuapp.com/people", success: function (data) {
-				//Update your dashboard gauge
-				for (var i = 0; i < data.people.length; i++) {
-					var client = data.people[i];
-					clients.push(client);
+				var temppeople = data.people.slice(0);
+				var tempclients = clients.slice(0);
+				var people = data.people;
+				for (var i = 0; i < people.length; i++) {
+					var person = people[i];
+					for (var j = 0; j < clients.length; j++) {
+						var client = clients[j];
+						if (person._id == client._id) {
+							var tempIncidents = person.events.splice(0);
+							for (var k = 0; k < person.events.length; k++) {
+								var incident = person.events[k];
+								for (var l = 0; l < client.events.length; l++) {
+									var event = client.events[l];
+									if (incident._id == event._id) {
+										tempIncidents.splice(k,1);
+									}
+								}
+							}
+							for (var m = 0; m < tempIncidents.length; m++) {
+								var incident = tempIncidents[m];
+								client.events.push(incident);
+								toastr.info("An new incident has been added for " + client.FNAME + " " + client.LNAME);
+							}
+							temppeople.splice(i, 1);
+						}
+					}
 				}
-				toastr.info("people updated!")
+				for (var x = 0; x < temppeople.length; x++) {
+					var client = temppeople[x];
+					clients.push(client);
+					toastr.info(client.Identity.FNAME + " was added to your client list.");
+				}
+				
+				
+				
 			}, dataType: "json"
 		});
 	}

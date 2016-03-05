@@ -21,7 +21,13 @@
 		}
 
 		vm.submit = function () {
-			toastr.info("Test");
+			vm.client.$save(function (data) {
+				toastr.success("Save successful");
+			});
+		}
+
+		vm.cancel = function () {
+			$state.go('clientList');
 		}
 	}
 }());
