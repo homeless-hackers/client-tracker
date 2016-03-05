@@ -45,7 +45,7 @@
 	}
 	setInterval(function () {
 		getClients();
-	}, 10000);
+	}, 2000);
 
 
 	var app = angular
