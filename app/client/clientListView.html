@@ -1,0 +1,44 @@
+﻿<div class="panel panel-primary">
+	<div class="panel-heading"
+		 style="font-size:large">
+		Product
+		List
+	</div>
+
+	<div class="panel-body">
+		<table class="table">
+
+			<thead>
+				<tr>
+					<td>
+						<button type="button"
+								class="btn btn-primary"
+								ng-click="vm.toggleImage()">
+							{{vm.showImage ? "Hide" : "Show"}} Image
+						</button>
+					</td>
+					<td>Name</td>
+					<td>Birth Date</td>
+					<td>Gender</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="client in vm.clients">
+					<td>
+						<img ng-if="vm.showImage"
+							 ng-src="{{client.imageUrl}}"
+							 style="width:50px;margin:2px"
+							 title="{{client.firstName}}">
+					</td>
+					<td>
+						<a ui-sref="clientEdit({Id: client.Id})">
+							{{ client.firstName}} {{client.middleName}} {{client.lastName}}
+						</a>
+					</td>
+					<td>{{ client.birthDate }}</td>
+					<td>{{ client.gender }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
