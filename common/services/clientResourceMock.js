@@ -53,36 +53,7 @@
                 ["ngMockE2E"]);
 
 	app.run(function ($httpBackend) {
-		 clients = [
-			{
-				Identity: {
-					CITIZEN: "US",
-					DOB: "7/31/1969",
-					FNAME: "MILES",
-					LNAME: "MARTIN",
-					MNAME: "ROBERT",
-					RACE: "C",
-					SEX: "M"
-				},
-				Sources: [
-				"83d150d743734097a4804a81af4dbea9",
-				"4f8353f705924e6b90ed6c9e464c29c4",
-				"b05b51a063bb4e05b84cc15c29f8848b"
-				],
-				_id: "361cee526d0a4a1ba24aa4ebfc1e278f",
-				_rev: "4-21720edb8c58cbd57538268c9971a3c5",
-				events: [
-				{
-					CASE_ID: "1457",
-					DATE: "3/6/2016",
-					HEARING_TYPE: "BENCH",
-					TIME: "8:00 AM",
-					TITLE: "MARTIN, ROB",
-					_id: "001caddee7d946cfbd3381f0eae5da16"
-				}
-				]
-			}
-			];
+		 clients = [];
 
 		var clientUrl = "api/clients"
 
