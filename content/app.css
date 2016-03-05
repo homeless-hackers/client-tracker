@@ -1,2 +1,14 @@
 ﻿body {
 }
+
+
+
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+
+

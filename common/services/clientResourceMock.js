@@ -20,8 +20,26 @@
            	"homePostalCode": "888888",
            	"maritalStatus": "Single",
            	"telephone": "8015555555",
-           	"imageUrl": ""
-           }
+			"memo": "hello",
+           	"imageUrl": "images/bryan.jpg"
+           },
+		   {
+		   	"Id": 1,
+		   	"firstName": "Dan",
+		   	"middleName": "",
+		   	"lastName": "Otto",
+		   	"birthDate": "October 18, 1975",
+		   	"gender": "male",
+		   	"homeStreet": "123 Main Street",
+		   	"homeCity": "SLC",
+		   	"homeState": "Utah",
+		   	"homePostalCode": "888888",
+		   	"maritalStatus": "Single",
+		   	"telephone": "8015555555",
+		   	"memo": "hello",
+		   	"imageUrl": ""
+		   }
+
 		];
 
 		var clientUrl = "api/clients"

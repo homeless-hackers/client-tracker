@@ -28,20 +28,20 @@
 					templateUrl: "app/welcomeView.html"
 				})
 				.state("clientList", {
-					url: "/clients",
+					url: "/client",
 					templateUrl: "app/client/clientListView.html",
 					controller: "ClientListController as vm"
 				})
 				.state("clientEdit", {
 					abstract: true,
-					url: "/clients/edit/:productId",
+					url: "/client/edit/:clientId",
 					templateUrl: "app/client/clientEditView.html",
 					controller: "ClientEditController as vm",
 					resolve: {
 						clientResource: "clientResource",
 						client: function (clientResource, $stateParams) {
-							var clientId = $stateParams.Id;
-							return clientResource.get({ Id: clientId }).$promise;
+							var clientId = $stateParams.clientId;
+							return clientResource.get({ clientId: clientId }).$promise;
 						}
 					}
 				})
