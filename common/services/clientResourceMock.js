@@ -13,7 +13,7 @@
 					for (var j = 0; j < clients.length; j++) {
 						var client = clients[j];
 						if (person._id == client._id) {
-							if (client.events) {
+							if (person.events) {
 								var tempIncidents = person.events.slice(0);
 								for (var k = 0; k < client.events.length; k++) {
 									var incident = client.events[k];
